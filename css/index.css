@@ -1,0 +1,88 @@
+/* CSS Style Sheet for personal website
+* Author: Mollee Jain;
+* Date: May 2015; 
+NOTE: All code here is mine. */
+
+/* style elements */ 
+body {
+	background-color: rgba(176,224,230,0.4)
+}
+
+h1	{		
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 54px;
+	font-weight: 200;
+	text-transform:uppercase;
+	margin: 10px auto;
+	text-align: center;
+}
+
+h2 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 30px;
+	font-weight: 200;
+	margin: 10px auto;
+}
+
+h3 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+	color: #FA8072;
+}
+
+/* paragraph */
+p {
+	font-family: 'Ariel',sans-serif;
+	font-size: 16px;
+	font-weight:200;
+	margin: 10px auto;
+}
+
+/* horizonantal break */
+hr {
+	color: #000; /* maroon */
+	border-style: solid;
+	border-width:1px;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* Editing the Nav bar settings */
+
+ul#nav li{
+	display: inline;
+	color: #FA8072;
+	padding: 10px;
+	border-radius: 4px 4px 0 0;
+}
+
+ul#nav {
+	text-transform: uppercase;
+	font-size: 20px;
+	text-align: center;
+}
+
+/* style for the 'a' attribute */
+a:link    {color:#FA8072; background-color:transparent; text-decoration:none}
+a:visited {color:#FA8072; background-color:transparent; text-decoration:none}
+a:hover   {color:#800000; background-color:transparent; text-decoration:none}
+a:active  {color:#800000; background-color:transparent; text-decoration:none}
+
+/* divs */
+
+.header {
+	color: #800;
+	margin: 0px;
+	padding: 0px;
+	background-color: rgba(255,255,255,0.5);
+}
+.section {
+	border: 1px solid black;
+	border-color: rgba(0,0,0,0.1);
+	margin: 10px auto;
+	padding: 10px;	
+	background-color: rgba(255,255,255,0.7);
+}
+
+
