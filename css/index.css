@@ -13,7 +13,7 @@ h1	{
 	font-size: 54px;
 	font-weight: 200;
 	text-transform:uppercase;
-	margin: 10px;
+	margin: 10px auto;
 	text-align: center;
 }
 
@@ -21,7 +21,7 @@ h2 {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-size: 30px;
 	font-weight: 200;
-	margin: 10px;
+	margin: 10px auto;
 }
 
 h3 {
