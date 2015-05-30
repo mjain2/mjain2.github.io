@@ -1,0 +1,17 @@
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;padding:.2em .6em;background-color:#fff"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">#!/bin/bash</span>
+<span style="color: #408080; font-style: italic">#PBS -l walltime=12:00:00</span>
+<span style="color: #408080; font-style: italic">#PBS -N nameofrunfile</span>
+<span style="color: #408080; font-style: italic">#PBS -m abe</span>
+<span style="color: #408080; font-style: italic">#PBS -l nodes=1:ppn=1</span>
+<span style="color: #408080; font-style: italic">#PBS -o /pathway/to/the/output/filename.oe</span>
+<span style="color: #408080; font-style: italic">#PBS -j oe</span>
+<span style="color: #408080; font-style: italic">#PBS -M email@example.edu</span>
+<span style="color: #408080; font-style: italic">#PBS -V </span>
+
+
+<span style="color: #408080; font-style: italic">#MAKE SURE FILE HAS PERMISSIONS NEEDED</span>
+<span style="color: #408080; font-style: italic"># Tell it to go to this directory</span>
+<span style="color: #008000">cd</span> /pathway/to/the/directory/needed
+<span style="color: #408080; font-style: italic">#load novocraft</span>
+module load novocraft
+</pre></div>

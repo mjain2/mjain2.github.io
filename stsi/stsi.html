@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata|Overlock+SC|Yanone+Kaffeesatz:400,300|Pathway+Gothic+One|Unica+One' rel='stylesheet' type='text/css'>
+    <!-- Yanone Kaffeesatz font - from Google fonts; includes extra light, light, and normal weight-->
+        <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200' rel='stylesheet' type='text/css'>
     <title>Welcome!</title>
     <style>
         
@@ -107,14 +108,12 @@
             background-color:#BA522B;
             padding:8px;
         }
+       
+
+     
     </style>
 </head>
-<body>
-    
-    <br />
-    <br />
-    <br />
-    <br />  
+<body> 
     <a name="top"></a>
     <h1> Mollee Jain - SURI 2013 </h1>
     <!--
@@ -211,7 +210,8 @@
             <a name="myconky"></a>
             <h5> My .conkyrc file </h5>
             <p> If you want a configuration to get you started here is the whole text of my .conkyrc file (to get the qstat command to work fill in the needed information under the "Remote Host" section of the configuration) : </p>
-            <?php include 'conkycode.php';?>
+            <!--?php include 'conkycode.html';?-->
+            <iframe src="conkycode.html" width = "100%" style="border-weight:1px"></iframe>
             
 <p> Note: the Linux Mint 15 logo should be downloaded and saved.  Include the pathway of the logo under the "TEST" - "SYSTEM" tab "image /pathway/to/logo/...". <br /> In the end, your conky configuration should look something like this:
 <br />
@@ -260,7 +260,8 @@
             <p> This command will give the first 2000 alignments of two files, and the mean and standard deviation of the fragment lengths of the sequence will be displayed at the end of the file.  As long as the -i parameters are robust enough for the read [ex. -i 500,100], the alignment will be fairly accurate.)</p>
             
             <p> The .run file I created to run this program is below.</p>
-            <?php include 'novoalignruncode.php'; ?>
+            <!--?php include 'novoalignruncode.php'; ?-->
+            <iframe src="novoalignruncode.html" width = "100%" style="border-weight:1px"></iframe>
     
     <!--What do you get from it?-->
     <a name="givenovo"></a>
@@ -328,7 +329,9 @@
         <a name="codechisq"></a>
         <h5>My Code:</h5>
         
-    <?php include 'pythoncode.php'; ?> 
+    <!--?php include 'pythoncode.php'; ?--> 
+    <iframe src="pythoncode.html" width = "100%" height = "300px" style="border-weight:1px"></iframe>
+
     <h5><a style="color:#BA522B; font-size:16px" href="#chisq">Top of "Running a Chi-Squared Test in Python"</a> <br /> <a style="color:#BA522B; font-size:16px" href="#top">Top</a></h5>
     <p style="border-style: dotted; border-width: 0px; border-top-width: 5px; margin-left: 0px; margin-right:0px"> </p>  
     
