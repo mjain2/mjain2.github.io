@@ -1,11 +1,13 @@
 /* CSS Style Sheet for personal website
 * Author: Mollee Jain;
 * Date: May 2015; 
-NOTE: All code here is mine. */
+NOTE: All code here is mine. 
+Color palette: http://www.colourlovers.com/palette/2096818/Thalassa_Amaranth
+*/
 
 /* style elements */ 
 body {
-	background-color: rgba(176,224,230,0.4)
+	background-color: rgba(176,224,230,0.4);
 }
 
 h1	{		
@@ -15,6 +17,7 @@ h1	{
 	text-transform:uppercase;
 	margin: 10px auto;
 	text-align: center;
+	color: #800;
 }
 
 h2 {
@@ -63,31 +66,42 @@ ul#nav li{
 ul#nav {
 	text-transform: uppercase;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
-	font-size: 24px;
+	font-size: 28px;
 	font-weight: 200;
 	text-align: center;
 }
 
 /* style for the 'a' attribute */
+a {
+	cursor: pointer;
+}
 a:link    {color:#FA8072; background-color:transparent; text-decoration:none}
 a:visited {color:#FA8072; background-color:transparent; text-decoration:none}
-a:hover   {color:#800000; background-color:transparent; text-decoration:none}
+a:hover   {color:#800000; background-color:rgba(255,255,240,.25); text-decoration:none}
 a:active  {color:#800000; background-color:transparent; text-decoration:none}
 
 /* divs */
 
-.header {
+.menu {
 	color: #800;
 	margin: 0px;
 	padding: 0px;
 	background-color: rgba(255,255,255,0.5);
+	text-align: center;
 }
+
+.menu ul {
+	display:inline-block;
+}
+
 .section {
 	border: 1px solid black;
 	border-color: rgba(0,0,0,0.1);
 	margin: 10px auto;
 	padding: 10px;	
 	background-color: rgba(255,255,255,0.7);
+	display:none;
 }
+
 
 

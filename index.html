@@ -4,9 +4,9 @@
 Mollee Jain
 5/24/15
 Personal Website 
-
 TO DO: 
--change font for headers and paragraphs
+-ideas: navigation bar, make responsive menu from inspirational pixels
+- make the projects page into an accordian type thing
 -->
 
 <html lang="en-US">
@@ -29,25 +29,52 @@ TO DO:
     	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
 		// figure out how to do this part!! Edit the icon so it's yours somehow - see tutorials
     	--> 
+    	<script type="text/javascript"> 
+    		function show(element) {
+    			var tabContent = document.getElementsByClassName('section');
+    			for (var i = 0; i<tabContent.length;i++) {
+    				tabContent[i].style.display = 'none';
+    			}
 
+    			document.getElementById(element).style.display = "block";
+    		}
+    	</script>
 	</head>
 
 	<body>
 		<!-- HEADER -->
-		<div id = "top" class="header">
+		<nav class = "menu">
 			<!--hr style = "border-width: 2px; color: #FA8072"-->
 			<hr style = "border-width: 3px">
-			<h1> Mollee Jain </h1>
-			
+			<a href = "index.html" >
+			<img src="images/home.png" alt = "home" width = "10%"> </a>
+			<h1 style="color:#800">  Mollee Jain </h1>
+		
 			<!--hr style = "border-width: 2px; color: #FA8072"-->
-			<ul id="nav">
-				<li> <a href="#about">About  </a>  </li>
-				<li> <a href="#projects">  Projects  </a>  </li>
-				<li>  <a href="#work">  Work Experience  </a>  </li>
-				<li> <a href="#contact">  Contact</a> </li>
+			<ul id="nav" class="active">
+				<li> <a onclick = "show('about')"> About </a> </li>
+				<li> <a onclick = "show('projects')">  Projects  </a>  </li>
+				<li>  <a onclick = "show('work')">  Work Experience  </a>  </li>
+				<li> <a onclick = "show('contact')">  Contact</a> </li>
 			</ul>
 			<hr style = "border-width: 3px">
-		</div>	
+		</nav>
+
+
+		<!--HOMEPAGE-->
+		<div id="home" class="section" style="display:block"> 
+			
+			<div style="background-color:#800">
+				<center> <h1 style="text-align: center;color:#ffffff">  • • • Welcome! • • • </h1> </center>
+			</div>
+
+			<div> 
+				<p style="padding:10px;text-align:center;font-size:20px"> This is the landing page for Mollee, a computer science major from Wellesley who is looking to refine and practice her HTML, CSS, and Javascript skills over this summer.  This site is a place where you could find out more about her, see her projects and work experience, and contact her! </p>
+			</div> 
+
+
+			
+		</div>
 
 		<!--ABOUT ME SECTION -->
 		<div id="about" class = "section">		
@@ -67,7 +94,9 @@ TO DO:
 				<h3> Novoalign & Chi Squared Analysis of GWAS tests - STSI <br> 
 					<span style = "color: #696969;font-weight:200;font-size:18px"> Summer 2013 </span>
 				</h3>
-				<p style="padding-left:20px"> Through the course of a summer at the Scripps Translational Science Intitute, I was able to work on a some personal and team projects. A detailed overview of my work can be found <a href = "./stsi/stsi.html"> here </a>.</p>
+				<p style="padding-left:20px"> Through the course of a summer at the Scripps Translational Science Intitute, I was able to work on a some personal and team projects. The wesbite I launched that summer details the work I did and can be found <a href = "./stsi/stsi.html"> here</a>.</p>
+				<p style="padding-left:20px"> One of my large scale projects for that summer was to create a chi-squared test in Python to apply to GWAS (or Genome Wide Association Study).  A GWAS is useful genomically because it tests a 'control' genome (for us, HG19) with a 'variable' genome to determine where the differences, or single-nucleotide polymorphisms (SNPs), occured.  Since a GWAS determines if the allelic frequency between genomes is different, I added code to determine if this difference in allelic frequency between genomes is significant.  If signifcant, then the SNP locations in the 'variable' genome could tell us something about diseases and illnesses, like cancer (the primary research area of our lab). </p>
+
 
 				
 			</div>
