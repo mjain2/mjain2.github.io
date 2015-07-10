@@ -52,6 +52,12 @@ hr {
 	margin: 0px;
 }
 
+span {
+	color: #696969;
+	font-weight:200;
+	font-size:18px;
+}
+
 /* Editing the Nav bar settings */
 
 ul#nav li{
@@ -101,6 +107,10 @@ a:active  {color:#800000; background-color:transparent; text-decoration:none}
 	padding: 10px;	
 	background-color: rgba(255,255,255,0.7);
 	display:none;
+}
+
+.par_projects {
+	padding-left: 20px;
 }
 
 
