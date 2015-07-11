@@ -7,12 +7,14 @@ Color palette: http://www.colourlovers.com/palette/2096818/Thalassa_Amaranth
 
 /* style elements */ 
 body {
-	background-color: rgba(176,224,230,0.4);
+	background: url("../images/clouds.jpg") no-repeat center center fixed;
+	background-size: cover;
+	background-color: rgba(176,224,230,0.4); /* in case image doesn't load */
 }
 
 h1	{		
 	font-family: 'Yanone Kaffeesatz', sans-serif;
-	font-size: 54px;
+	font-size: 320%;
 	font-weight: 200;
 	text-transform:uppercase;
 	margin: 10px auto;
@@ -22,14 +24,14 @@ h1	{
 
 h2 {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
-	font-size: 30px;
+	font-size: 200%;
 	font-weight: 200;
 	margin: 10px auto;
 }
 
 h3 {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
-	font-size: 20px;
+	font-size: 125%;
 	font-weight: 300;
 	color: #000;
 	padding-left: 10px;
@@ -38,7 +40,7 @@ h3 {
 /* paragraph */
 p {
 	font-family: 'Ariel',sans-serif;
-	font-size: 16px;
+	font-size: 100%;
 	font-weight:200;
 	margin: 10px auto;
 }
@@ -55,7 +57,7 @@ hr {
 span {
 	color: #696969;
 	font-weight:200;
-	font-size:18px;
+	font-size:100%;
 }
 
 /* Editing the Nav bar settings */
@@ -72,18 +74,21 @@ ul#nav li{
 ul#nav {
 	text-transform: uppercase;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
-	font-size: 28px;
+	font-size: 175%;
 	font-weight: 200;
 	text-align: center;
-}
+}	
+
+#homeIcon:hover {background-color: rgba(176,224,230,0.25);}
 
 /* style for the 'a' attribute */
 a {
 	cursor: pointer;
 }
+
 a:link    {color:#FA8072; background-color:transparent; text-decoration:none}
 a:visited {color:#FA8072; background-color:transparent; text-decoration:none}
-a:hover   {color:#800000; background-color:rgba(255,255,240,.25); text-decoration:none}
+a:hover   {color:#800000; background-color:transparent; text-decoration:none}
 a:active  {color:#800000; background-color:transparent; text-decoration:none}
 
 /* divs */
@@ -94,6 +99,7 @@ a:active  {color:#800000; background-color:transparent; text-decoration:none}
 	padding: 0px;
 	background-color: rgba(255,255,255,0.5);
 	text-align: center;
+	
 }
 
 .menu ul {
@@ -112,6 +118,12 @@ a:active  {color:#800000; background-color:transparent; text-decoration:none}
 .par_projects {
 	padding-left: 20px;
 }
+
+.ui-tabs-hide {
+ display:none;   
+}
+
+
 
 
 
