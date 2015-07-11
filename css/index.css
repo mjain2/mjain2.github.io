@@ -95,11 +95,11 @@ a:active  {color:#800000; background-color:transparent; text-decoration:none}
 
 .menu {
 	color: #800;
-	margin: 0px;
-	padding: 0px;
+	margin: 0%;
+	padding: 0%;
 	background-color: rgba(255,255,255,0.5);
 	text-align: center;
-	
+
 }
 
 .menu ul {
@@ -109,8 +109,8 @@ a:active  {color:#800000; background-color:transparent; text-decoration:none}
 .section {
 	border: 1px solid black;
 	border-color: rgba(0,0,0,0.1);
-	margin: 10px auto;
-	padding: 10px;	
+	margin: 1% auto;
+	padding: 1%;	
 	background-color: rgba(255,255,255,0.7);
 	display:none;
 }
@@ -119,9 +119,6 @@ a:active  {color:#800000; background-color:transparent; text-decoration:none}
 	padding-left: 20px;
 }
 
-.ui-tabs-hide {
- display:none;   
-}
 
 
 
