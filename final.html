@@ -25,22 +25,31 @@ hr {
 	color: black;
 	width: 100%;
 } 
-.background {
+/*.background {
 	background: #000000;
 	border:45px solid black;
 	width: 15%; 
-}
+}*/
 
 #theFooter {
 	color: #000000;
+	background-color: #ffffff;
+	border-color: #ffffff;
 }
 
-#theBanner {
+#theHeader {
+	background-color: #ffffff;
+	border-color: #ffffff;
+}
 
+#theMainPage {
+	background-color: #ffffff;
+	border-color: #ffffff;
 }
 
 #mainpage {
 	border: none;
+	background-color:#ffffff;
 }
 </style>
 
@@ -73,7 +82,7 @@ hr {
 <body>
 <div data-role="page" id="mainpage">
 	<!-- HEADER OF THE PAGE -->
-	<div data-role="header">
+	<div data-role="header" id="theHeader">
 		<!-- MAKEUP MATCHUP BANNER -->
 		<div class="main-header" data-role="banner">
 			<center><img src="banner.png" border="0" height="140" width="320" align="middle" alt="Banner Image"/></center>
@@ -82,27 +91,25 @@ hr {
 		<!-- foundation pics for banner -->
 		<div id = "theBanner">
 			<!--div class="main-header" data-role="banner"-->
-				<img src="liquidmakeup.jpeg" border="0" height="40%" width="25%" align="left"/>
+				<img src="liquidmakeup.jpeg" margin="0px" border="0" height="40%" width="25%" align="left"/>
 			<!--/div-->
 
 
 			<!--div class="main-header" data-role="banner"-->
-				<img src="liquidmakeup.jpeg" border="0" height="40%" width="25%" align="left"/>
+				<img src="liquidmakeup.jpeg" margin="0px" border="0" height="40%" width="25%" align="left"/>
 			<!--/div-->
 
 
 			<!--div class="main-header" data-role="banner"-->
-				<img src="liquidmakeup.jpeg" border="0" height="40%" width="25%" align="right"/>
+				<img src="liquidmakeup.jpeg" margin="0px" border="0" height="40%" width="25%" align="right"/>
 			<!--/div-->
 
 
 			<!--div class="main-header" data-role="banner"-->
-				<img src="liquidmakeup.jpeg" border="0" height="40%" width="25%" align="right"/>
+				<img src="liquidmakeup.jpeg" margin="0px" border="0" height="40%" width="25%" align="right"/>
 			<!--/div-->
-		</div> <!-- End of banner part -->
-		<div id="theText">
-			<center><p><font size="2%"> makeup for you </font></p></center>
-			<hr>
+				<center><p><font size="2%" margin="0px"> makeup for you </font></p></center>
+				<hr>
 		</div>
 	</div> <!-- End of header -->
 
@@ -115,12 +122,11 @@ hr {
 	<hr> -->
 	
 	<!-- START OF THE MAIN PAGE --> 
-	<div data-role="main">
+	<div data-role="main" id="theMainPage">
 <!-- container for camera upload image -->
 		<div class="background"> 
 			<!--style = "height: 400px; width: 400px; background-color: #141414; text-align: center;"--> 
-			<p><img src="uploadcamera.png" border="0" height="240" width="260" align="center">
-			</p>
+			<p align="center"><img src="uploadcamera.png" border="45px" border-color="#000000" height="240" width="260"></p>
 		</div>
 	</div><!-- END OF MAIN DATA-ROLE --> 
 
@@ -138,6 +144,9 @@ hr {
  <!-- <button onclick="doIt()">Run the request</button> creating a button-->
  <!-- <div id="output">The API request is:</div--> 
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+ 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"> </script>
 
 
 
