@@ -52,14 +52,30 @@ TO DO:
 
 
   		<script> 
-  		function show(element) {
-			var tabContent = document.getElementsByClassName('section');
-			for (var i = 0; i<tabContent.length;i++) {
-				tabContent[i].style.display = 'none';
-			}
-			document.getElementById(element).style.display = "block";
+  // 		function show(element) {
+		// 	var tabContent = document.getElementsByClassName('section');
+		// 	for (var i = 0; i<tabContent.length;i++) {
+		// 		tabContent[i].style.display = 'none';
+		// 	}
+		// 	document.getElementById(element).style.display = "block";
 			
-		} 
+		// } 
+		// $(function()
+		// 	{
+		// 	 $(".content").find("div:first").show();
+		// 	});
+
+		function ShowHide(e)
+		{
+		// var tabContent = document.getElementsByClassName('section');
+		// 	for (var i = 0; i<tabContent.length;i++) {
+		// 		tabContent[i].style.display = 'none';
+		// 	}
+		  var id =$(e).attr("href"); 
+		  $(".section").hide();
+		  $(id).show();
+
+		}
 
   		</script>
     	
@@ -70,22 +86,22 @@ TO DO:
 		<!-- ******************************************************** -->
 		<!-- ********************** NAV BAR ************************* -->
 		<!-- ******************************************************** -->
-		<div data-role = "navbar">
+		<div data-role = "header">
 		<nav class = "menu" id="tabs">
 			<!--hr style = "border-width: 2px; color: #FA8072"-->
 			<hr style = "border-width: 3px">
 		</br>
-			<a href = "index.html">
+			<a href = "indexjquery.html">
 			<img id = "homeIcon" src="icons/home.png" alt = "home" width = "3.5%" href="#home"> </a>
 			<h1 style="color:#800">  Mollee Jain </h1> 
 			<!--hr style = "border-width: 2px; color: #FA8072"-->
 			
 			<!-- NAV BAR TABS --> 
 			<ul id="nav" class="active">
-				<li> <a href = "#about" onclick="show('about')"> About </a> </li>
-				<li> <a href = "#projects" onclick="show('projects')">  Projects  </a>  </li>
-				<li> <a href = "#work" onclick="show('work')">  Work Experience  </a>  </li>
-				<li> <a href = "#contact" onclick="show('contact')">  Contact</a> </li>
+				<li> <a href = "#aboutPage" onclick="ShowHide(this)"> About </a> </li>
+				<li> <a href = "#projects" onclick="ShowHide(this)">  Projects  </a>  </li>
+				<li> <a href = "#work" onclick="ShowHide(this)">  Work Experience  </a>  </li>
+				<li> <a href = "#contact" onclick="ShowHide(this)">  Contact</a> </li>
 			</ul>
 			
 			<hr style = "border-width: 3px;">
@@ -95,8 +111,9 @@ TO DO:
 		<!-- *****************************************************-->
 		<!-- ****************** HOMEPAGE *************************-->
 		<!-- *****************************************************-->
-		<div data-role="content" class = "content">
-		<div id="home" class="section" style="display:block"> 
+		<div data-role="page" id = "homePage">
+
+		<div data-role="content" id="home" class="section" style="display:block"> 
 			
 			<div style="background-color:#800">
 				<h1 style="text-align:center;color:#ffffff">• • • Welcome! • • •</h1> 
@@ -106,20 +123,24 @@ TO DO:
 				<p style="padding:10px;text-align:center;font-size:18px"> This is the landing page for Mollee, a computer science major from Wellesley who is looking to refine and practice her HTML, CSS, and Javascript skills over this summer.  This site is a place where you could find out more about her, see her projects and work experience, and contact her! </p>
 			</div> 
 		</div>
+	</div>
 		<!-- ***************************************************** -->
 		<!-- *************** ABOUT ME SECTION ******************** -->
 		<!-- ***************************************************** -->
-		<div id="about" class = "section">		
+		<div data-role="page" id = "aboutPage" class="section">
+		<div data-role = "content" id = "about" >		
 			<h2> About: </h2>
 			<p> I am rising senior at Wellesley College pursuing a degree in Computer Science and Biology.  Building from my initial exposure to computer science at The Scripps Translational Science Institute (STSI), I have pursued other projects and courses relevant to my developing interests.  Be sure to check them out!! </p> 
 
 		</div>
+	</div>
 
 
 
 		<!-- ***************************************************** -->
 		<!-- *************** PROJECTS SECTION ******************** -->
 		<!-- ***************************************************** -->
+		<div data-role="page" id = "projectPage">
 		<div id="projects" class = "section">
 			<h2>  Projects: </h2>
 			<hr>
@@ -167,10 +188,12 @@ TO DO:
 
 
 		</div>	
+	</div>
 
 		<!-- ***************************************************** -->
 		<!-- ************ WORK EXPERIENCE SECTION **************** -->
 		<!-- ***************************************************** -->
+		<div data-role="page" id = "workPage">
 		<div id="work" class = "section">
 			<h2>  Work Experience: </h2>
 			<p> Visit me at my <a href="https://www.linkedin.com/pub/mollee-jain/a6/a14/207"> LinkedIn </a> page. </p>
@@ -178,26 +201,27 @@ TO DO:
 
 			<p> To see a couple of my favorite projects, check out the projects tab! </p>
 		</div>	
+	</div>
 		<!-- ***************************************************** -->
 		<!-- ************ CONTACT SECTION ************************ -->
 		<!-- ***************************************************** -->
+		<div data-role="page" id = "contactPage">
 		<div id="contact" class = "section">
 			<h2>  Contact: </h2>
 			<p> Email: <a href="mailto:mjain2@wellesley.edu"> mjain2@wellesley.edu</a></p>
 			<!-- Include the icons here - see Angel's code for inspiration -->
-
-
-
 		</div>	
+	</div>
 
-	</div> <!-- end of data-role content -->
 
 		<!-- ***************************************************** -->
 		<!-- ******************* FOOTER ************************** -->
 		<!-- ***************************************************** -->
+		<div data-role="footer" id = "footer">
 		<hr>
 		<p style = "font-size: 12px; text-align: center"> &#169; Mollee Jain 2015 <br> NOTE: This webpage was created from scratch (including any and all CSS styling) by Mollee as a fun project in her free time. </p>
 		<hr>
+	</div>
 	</body>
 
 	<script>

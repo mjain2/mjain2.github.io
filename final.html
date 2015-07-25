@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> MakeUp MatchUp </title>
+	<!-- Rendering and touch zoom -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Access Mobile Stylesheet -->
+	<!--link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" /-->
+	<!-- Load JQuery -->
+	<meta charset="utf-8"> <!--has to do with making it accessible-->
+	<title>MakeUp MatchUp</title>
+
+
+<style>
+p {
+	font-family: Ariel, Verdana, Times; 
+}
+hr { 
+    display: block;   
+    margin-left: 0;
+    margin-right: auto;
+    border-width: 6px;
+	border-style: solid;
+	color: black;
+	width: 100%;
+} 
+.background {
+	background: #000000;
+	border:45px solid black;
+	width: 15%; 
+}
+
+#theFooter {
+	color: #000000;
+}
+
+#theBanner {
+
+}
+
+#mainpage {
+	border: none;
+}
+</style>
+
+  <script>
+	function doIt() { //creating a function
+ var output = $.ajax({ //returning response from JQuery library
+    url: 'https://apicloud-colortag.p.mashape.com/tag-url.json?palette=simple&sort=relevance&url=http%3A%2F%2Fimages.wisegeek.com%2Ftriangular-face.jpg', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc, get the image from the url and get the colors
+    data: {}, // Additional parameters here, where data goes into
+    dataType: 'json', //calling json (like a dictionary)
+    success: function(data) { //when url is valid
+        //Change data.source to data.something , where something is whichever part of the object you want returned.
+        //To see the whole object you can output it to your browser console using:
+        console.log(data.tags[0].label); //gets color label
+		console.log(data.tags[0].color); //gets primary color hex value
+       	document.getElementById("output").innerHTML = data.tags[0].label; //getting everything from output and returning it
+        },
+    error: function(err) { alert(err); }, //if there's an error (when url is invalid)
+    beforeSend: function(xhr) { //set the request header (telling API that it wants to use it)
+    xhr.setRequestHeader("X-Mashape-Authorization", "JKQY6k8d7MmshqiYhb9DfJrSISfDp1uFTPnjsnF5hsX5SIQi5Y"); // Enter here your Mashape key
+    }
+});
+//var skin = [#ecd3bd, #f2c1a3, #e6d1be, #e5ba98,#d9aa7c, #e2cab2, #dac2aa, #e9c6aa, #ca9a6a, #b4825f, #c89874];
+}
+
+
+	
+</script>
+</head>
+<body>
+<div data-role="page" id="mainpage">
+	<!-- HEADER OF THE PAGE -->
+	<div data-role="header">
+		<!-- MAKEUP MATCHUP BANNER -->
+		<div class="main-header" data-role="banner">
+			<center><img src="MakeUp MatchUp logo banner.png" border="0" height="140" width="320" align="middle" alt="Banner Image"/></center>
+		</div>
+		
+		<!-- foundation pics for banner -->
+		<div id = "theBanner">
+			<!--div class="main-header" data-role="banner"-->
+				<img src="liquidmakeup.jpeg" border="0" height="40%" width="25%" align="left"/>
+			<!--/div-->
+
+
+			<!--div class="main-header" data-role="banner"-->
+				<img src="liquidmakeup.jpeg" border="0" height="40%" width="25%" align="left"/>
+			<!--/div-->
+
+
+			<!--div class="main-header" data-role="banner"-->
+				<img src="liquidmakeup.jpeg" border="0" height="40%" width="25%" align="right"/>
+			<!--/div-->
+
+
+			<!--div class="main-header" data-role="banner"-->
+				<img src="liquidmakeup.jpeg" border="0" height="40%" width="25%" align="right"/>
+			<!--/div-->
+		</div> <!-- End of banner part -->
+		<div id="theText">
+			<center><p><font size="2%"> makeup for you </font></p></center>
+			<hr>
+		</div>
+	</div> <!-- End of header -->
+
+
+<!-- MAKEUP MATCHUP BANNER -->
+<!--<div class="main-header" data-role="banner">
+	<center><img src="MakeUp MatchUp logo banner.png" border="0" height="110" width="310" align="middle" alt="Banner Image"/></center>
+</div>
+	<center><p><font size="2"> makeup for you </font></p></center>
+	<hr> -->
+	
+	<!-- START OF THE MAIN PAGE --> 
+	<div data-role="main">
+<!-- container for camera upload image -->
+		<div class="background"> 
+			<!--style = "height: 400px; width: 400px; background-color: #141414; text-align: center;"--> 
+			<p><img src="uploadcamera.png" border="0" height="240" width="260" align="center">
+			</p>
+		</div>
+	</div><!-- END OF MAIN DATA-ROLE --> 
+
+
+<!-- Credits -->
+	<!-- START OF FOOTER -->
+	<div data-role="footer" id="theFooter">
+		<center><p><font size="2"> MakeUp MatchUp  // Created By: Kimberly B. Azondé G. Ellie P. Danika J.</font></p></center>
+
+
+	</div> <!-- End of FOOTER -->
+</div> <!-- End of PAGE -->
+
+
+ <!-- <button onclick="doIt()">Run the request</button> creating a button-->
+ <!-- <div id="output">The API request is:</div--> 
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+
+</body>
+</html>
