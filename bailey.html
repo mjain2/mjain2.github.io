@@ -135,16 +135,17 @@
 	  console.log(lng);
 	  map.setCenter(new google.maps.LatLng(lat, lng)); 
 	  console.log("SHOW POSITION: " + lat + "  " + lng);
+	  return [lat,lng];
 	}
 
 	function getLocation() {
 		if (navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(showPosition);
+				var position = navigator.geolocation.getCurrentPosition(showPosition);
+				console.log(position);
 			} else {
 				alert("Geolocation is not supported by this browser.");
 			}
-		console.log(lat + '' + lng);
-		return [lat,lng];
+		return showPosition(position);
 	}
 	//ADD POINT-------------------------------------------------------------------------
 		function addPoint() {
@@ -153,6 +154,7 @@
 		//	var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
 			var infowindow = new google.maps.InfoWindow();
 			var coordinates = getLocation();
+			console.log(coordinates);
 			lat = coordinates[0];
 			lng = coordinates[1];
 			var marker,i; //currentId, uniqueId, id;
