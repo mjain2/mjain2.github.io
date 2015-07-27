@@ -131,21 +131,22 @@
 	
 	function showPosition(position) {
 	  var lat = position.coords.latitude;
-	  console.log(lat);
 	  var lng = position.coords.longitude;
-	  console.log(lng);
 	  map.setCenter(new google.maps.LatLng(lat, lng)); 
 	  console.log("SHOW POSITION: " + lat + "  " + lng);
 	  theCoords.push([lat,lng]);
+	  return theCoords;
 	}
 
 	function getLocation() {
 		if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(showPosition);
+				theCoords = showPosition(position);
 			} else {
 				alert("Geolocation is not supported by this browser.");
 			}
 		console.log(theCoords);
+		return theCoords;
 	}
 	//ADD POINT-------------------------------------------------------------------------
 		function addPoint() {
@@ -153,7 +154,7 @@
 			//var loong = Number(prompt("Please enter longitude", "longitude"));
 		//	var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
 			var infowindow = new google.maps.InfoWindow();
-			getLocation();
+			theCoords = getLocation();
 			var theLat = theCoords[0];
 			var theLng = theCoords[1];
 			var marker,i; //currentId, uniqueId, id;
