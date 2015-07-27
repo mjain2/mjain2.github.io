@@ -70,6 +70,7 @@
 			center: new google.maps.LatLng(0, 0),
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
+		getLocation();
 	}
 	//GEOLOCATION------------------------------------------------------------------------------------
 	// Try HTML5 geolocation
@@ -137,7 +138,7 @@
 
 	}
 	function showPosition(position) {
-		lat = position.coords.latitude;
+	  lat = position.coords.latitude;
 	  console.log(lat);
 	  lng = position.coords.longitude;
 	  console.log(lng);
@@ -150,16 +151,12 @@
 			//var lat = Number(prompt("Please enter latitude", "latitude"));
 			//var loong = Number(prompt("Please enter longitude", "longitude"));
 		//	var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
-			
-
-			getLocation();
-			console.log(locations[0]);
-			
 			var infowindow = new google.maps.InfoWindow();
 			
 			var marker,i; //currentId, uniqueId, id;
 			var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
 			locations.push([condition, lat, lng, i+1]);
+			alert(locations[0]);
 			//places points:
 			for (i = 0; i < locations.length; i++) {  
 				marker = new google.maps.Marker({ //makes a new marker
