@@ -141,7 +141,7 @@
 	function getLocation() {
 		if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(showPosition);
-				theCoords = showPosition(position);
+				theCoords = showPosition();
 			} else {
 				alert("Geolocation is not supported by this browser.");
 			}
