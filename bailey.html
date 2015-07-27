@@ -129,36 +129,14 @@
 	var theLat,theLng;
 	var theCoords = []; //for coordinates
 	navigator.geolocation.getCurrentPosition(function(position) {
-		var lat = position.coords.latitude;
+	  var lat = position.coords.latitude;
 	  var lng = position.coords.longitude;
 	  map.setCenter(new google.maps.LatLng(lat, lng)); 
 	  console.log("SHOW POSITION: " + lat + "  " + lng);
-	  theCoords.push(lat,lng);
+	  theCoords.push(lat);
+	  theCoords.push(lng);
 	});
 
-	// function showPosition(position) {
-	  // var lat = position.coords.latitude;
-	  // var lng = position.coords.longitude;
-	  // map.setCenter(new google.maps.LatLng(lat, lng)); 
-	  // console.log("SHOW POSITION: " + lat + "  " + lng);
-	  // theCoords.push([lat,lng]);
-	  // return theCoords;
-	// }
-
-	// function getCoords(lat,lng) {
-	// 	theCoords.push([lat,lng]);
-	// 	return theCoords;
-	// }
-	// function getLocation() {
-	// 	if (navigator.geolocation) {
-	// 			navigator.geolocation.getCurrentPosition(showPosition);
-	// 			theCoords = showPosition();
-	// 		} else {
-	// 			alert("Geolocation is not supported by this browser.");
-	// 		}
-	// 	console.log(theCoords);
-	// 	return theCoords;
-	// }
 	//ADD POINT-------------------------------------------------------------------------
 		function addPoint() {
 			//var lat = Number(prompt("Please enter latitude", "latitude"));
@@ -167,10 +145,13 @@
 			var infowindow = new google.maps.InfoWindow();
 			var theLat = theCoords[0];
 			var theLng = theCoords[1];
+			console.log(theCoords);
 			var marker,i; //currentId, uniqueId, id;
 			var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
 			locations.push([condition, theLat, theLng, i+1]);
 			theCoords.pop();
+			theCoords.pop();
+			console.log(theCoords);
 			alert(locations[0]);
 			//places points:
 			for (i = 0; i < locations.length; i++) {  
