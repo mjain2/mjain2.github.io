@@ -127,6 +127,16 @@
 		//['needs blanket', 38, -119, 1],
 	];	
 	var lat,lng;
+	
+	function showPosition(position) {
+	  lat = position.coords.latitude;
+	  console.log(lat);
+	  lng = position.coords.longitude;
+	  console.log(lng);
+	  map.setCenter(new google.maps.LatLng(lat, lng)); 
+	  console.log("SHOW POSITION: " + lat + "  " + lng);
+	}
+
 	function getLocation() {
 		if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(showPosition);
@@ -135,15 +145,6 @@
 			}
 		console.log(lat + '' + lng);
 		return [lat,lng];
-	}
-	function showPosition(position) {
-	  lat = position.coords.latitude;
-	  console.log(lat);
-	  lng = position.coords.longitude;
-	  console.log(lng);
-	  map.setCenter(new google.maps.LatLng(lat, lng));
-
-	 
 	}
 	//ADD POINT-------------------------------------------------------------------------
 		function addPoint() {
