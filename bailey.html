@@ -152,7 +152,6 @@
 			theCoords.pop(); //removes lng in theCoords array
 			theCoords.pop(); //removes lat in theCoords array -- it is now empty
 			console.log(theCoords);
-			alert(locations[0]);
 			//places points:
 			for (i = 0; i < locations.length; i++) {  
 				marker = new google.maps.Marker({ //makes a new marker
@@ -167,35 +166,7 @@
 				}
 			})(marker, i));
 			}
-			
-			
-			
-			
 
-			
-			
-			
-			
-			/*		
-			var infowindow = new google.maps.InfoWindow();
-			
-			var marker, i; //currentId, uniqueId, id;
-				
-			//places points:
-			for (i = 0; i < locations.length; i++) {  
-				marker = new google.maps.Marker({ //makes a new marker
-				position: new google.maps.LatLng(locations[i][1], locations[i][2]), //sets position to lat and lng values
-				map: map
-			});
-
-			google.maps.event.addListener(marker, 'click', (function(marker, i) {
-				return function() {
-				  infowindow.setContent(locations[i][0]);
-				  infowindow.open(map, marker);
-				}
-			})(marker, i));
-			}
-			*/
 		}
 
 
