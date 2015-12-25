@@ -119,6 +119,54 @@ a:active  {color:#800000; background-color:transparent; text-decoration:none}
 	padding-left: 20px;
 }
 
+.profile_pic {
+	background-size: 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 25%; 
+        /*
+	background-color: rgba(176,224,230,0.4);
+	border-radius: 30%;
+	padding-bottom: 50%;
+	position:relative;
+	min-height:1px;
+	padding-right:15px;
+	padding-left:15px */
+}
+
+#first_pic {
+	background-image:url("../images/profile_circle.png");
+	float:left;
+	width:25%;
+	margin-right: 3%;
+	margin-left: 3%;
+
+}
+
+#second_pic {
+	background-image:url("../images/gwc_profile.png");
+	float:left;
+	width:25%;
+	margin-right: 3%;
+	margin-left: 3%;
+}
+
+#third_pic {
+	background-image:url("../images/hiking2_profile.png");
+	float:left;
+	width:25%;
+	margin-right: 3%;
+	margin-left: 3%;
+}
+
+#pic_container {
+	padding-right: 3%;
+	padding-left: 3%;
+
+}
+
+.footer_div {
+	overflow: hidden;
+}
 
 
 

@@ -15,13 +15,7 @@ TO DO:
 - make the projects page into an accordian type collapsible (also for work experience?)
 - still to make: icons for contact (linkedIn, github, twitter, instagram, email)
 - insert a photo gallery (if applicable)
-- expand on the about me page
 - expland on the contact page (add icons - see above)
-<li> <a onclick = "show('about')" href = "#about"> About </a> </li>
-				<li> <a onclick = "show('projects')" href = "#">  Projects  </a>  </li>
-				<li> <a onclick = "show('work')" href = "#">  Work Experience  </a>  </li>
-				<li> <a onclick = "show('contact')" href = "#">  Contact</a> </li>
-
 -->
 
 <html lang="en-US">
@@ -122,8 +116,13 @@ TO DO:
 		<!-- ***************************************************** -->
 		<div id="about" class = "section">		
 			<h2> About: </h2>
+			
 			<p> I am rising senior at Wellesley College pursuing a degree in Computer Science and Biology.  Building from my initial exposure to computer science at The Scripps Translational Science Institute (STSI), I have pursued other projects and courses relevant to my developing interests.  Be sure to check them out!! </p> 
-
+		<div id="pic_container" style="overflow:hidden">
+			<div class="profile_pic" id = "first_pic"> </div> 
+			<div class="profile_pic" id = "second_pic"> </div>
+			<div class="profile_pic" id = "third_pic"> </div>
+		</div>
 		</div>
 
 
@@ -139,9 +138,10 @@ TO DO:
 			<div id="cs307" class = "project"> 
 				<h3> Computer Graphics - CS307 Project <br> 
 					<span style = "color: #696969;font-weight:200;font-size:18px"> Fall 2014 </span> </h3>
-				<p style="padding-left:20px">  To be updated... </p>
+				<p class="par_projects"> For a detailed description and live demo of this project, check out <a href="https://cdn.rawgit.com/mjain2/cs307-graphics/master/project.html" target="_blank"> this </a> page.</p>
+
 				<p class="par_projects"> Screenshots of my final graphics project are below. <center><img src="cs307/combinedview.png" alt="cs307" style="width:100%;height:60%;"></center> </p>
-				<p class="par_projects"> For a detailed description of this project, check out <a href="https://cdn.rawgit.com/mjain2/cs307-graphics/master/project.html"> this </a> page.</p>
+				
 			</div>
 			<hr>
 
@@ -150,6 +150,11 @@ TO DO:
 				<h3> Data Structures - CS230 Project <br> 
 					<span style = "color: #696969;font-weight:200;font-size:18px"> Spring 2014 </span></h3>
 				<!--p class="par_projects"> This course allowed students to explore tools and techniques for managing data and   </p-->
+				<p class="par_projects"> This course explored topics in data abstration, modularity, and performance optimization.  As part of our final project, my group and I implemented a "Buzzfeed"-esque quiz to determine which Wellesley College dorm best fits your personality.  </p>
+				<p class="par_projects"> One way of taking the quiz was to answer a series of questions at the end of which an ideal dorm matching your responses would be presented.  Another method of determining your ideal dorm is through simply checking the qualities in a dorm that are important to you.We primarily used decision trees and hashtables to run this quiz.  The quiz can be taken both in the console and in a GUI in Java, a screenshot of which is shown below.  </p>
+			</br> 
+			<center><img src="images/cs230.png" alt="cs230" style="width:60%;height:50%;"></center>
+			</br> </br> 
 			</div>
 			<hr>
 
@@ -158,7 +163,7 @@ TO DO:
 			<div id="cs249" class = "project"> 
 				<h3> Computing and Life - CS249 Project <br> 
 					<span>  Spring 2014 </span> </h3>
-				<p class="par_projects"> This course explored the areas of bioinformatics, computational genomics, and modeling/simulating aspects of life. As part of my final project, I had to use an existing model on NetLogo and modify it for my own use.  I was interested explaining how the immune system reacts to the presence of a pathogen (ie. learned responses vs initial exposures to pathogens) and decided to show a model of how the immune system fights pathogens.  For an added level of complexity, I added in the factor of evolving pathogens and shifted my model to also deal with the evolving pathogens. </br> </br> A screenshot of the final model can be seen below. <center><img src="images/cs249final.png" alt="cs249" style="width:80%;height:50%;"></center>
+				<p class="par_projects"> This course explored the areas of bioinformatics, computational genomics, and modeling/simulating aspects of life. As part of my final project, I had to use an existing model on NetLogo and modify it for my own use.  I was interested explaining how the immune system reacts to the presence of a pathogen (ie. learned responses vs initial exposures to pathogens) and decided to show a model of how the immune system fights pathogens.  For an added level of complexity, I added in the factor of evolving pathogens and shifted my model to also deal with the evolving pathogens. </br> </br> A screenshot of the final model can be seen below. <center><img src="images/cs249final.png" alt="cs249" style="width:60%;height:30%;"></center>
 				</br> </p>
 				<p>
 				As part of my model, I included different types of pathogens (ie. Influenza A pathogens) with varying strength and mortality rates.  I added in a variable to account for a pathogen that attacks the immune system and another variable to account for if a vaccine is available for the vaccine.  These presets were automatically set based on which pathogen was selected.  Another dynamic variable was the count of pathogens present in your system before simulating the model.  A graph at the bottom would display the counts of white blood cells vs pathogen cells.
@@ -186,7 +191,7 @@ TO DO:
 		<!-- ***************************************************** -->
 		<div id="work" class = "section">
 			<h2>  Work Experience: </h2>
-			<p> Visit me at my <a href="https://www.linkedin.com/pub/mollee-jain/a6/a14/207"> LinkedIn </a> page. </p>
+			<p> Visit me at my <a href="https://www.linkedin.com/in/molleejain"> LinkedIn </a> page. </p>
 			<p> To be updated... </p>
 
 			<p> To see a couple of my favorite projects, check out the projects tab! </p>
@@ -196,8 +201,27 @@ TO DO:
 		<!-- ***************************************************** -->
 		<div id="contact" class = "section">
 			<h2>  Contact: </h2>
-			<p> Email: <a href="mailto:mjain2@wellesley.edu"> mjain2@wellesley.edu</a></p>
-			<!-- Include the icons here - see Angel's code for inspiration -->
+
+			<p style="padding-bottom:1%;"> 
+				<img class="icons" src="./icons/email131.png" alt="Icons made by Elegant Themes from Flaticon (www.flaticon.com) and is licensed by CC BY 3.0" style="width:3%;vertical-align:text-bottom;">
+			 	<a href="mailto:mjain2@wellesley.edu"> mjain2@wellesley.edu </a> 
+			</p> 
+			<p style="padding-bottom:1%;"> 
+				<img class="icons" src="./icons/linkedin1.png" alt="Icons made by Elegant Themes from Flaticon (www.flaticon.com) and is licensed by CC BY 3.0" style="width:3%;vertical-align:text-bottom"> 
+				<a href="https://www.linkedin.com/in/molleejain" target="_blank"> www.linkedin.com/in/molleejain </a> 
+			</p>
+
+			<p style="padding-bottom:1%;">
+				<img class="icons" src="./icons/github10.png" alt="Icons made by Elegant Themes from Flaticon (www.flaticon.com) and is licensed by CC BY 3.0" style="width:3%;vertical-align:text-bottom">
+				<a href="https://github.com/mjain2" target="_blank"> github.com/mjain2 </a>
+			</p>
+			
+			<p style="padding-bottom:1%;">
+				<img class="icons" src="./icons/twitter.png" alt="Icons made by Elegant Themes from Flaticon (www.flaticon.com) and is licensed by CC BY 3.0" style="width:3%;vertical-align:text-bottom">
+				<a href="https://twitter.com/MolleeJain" target="_blank"> @molleejain </a>
+			</p>
+		
+		
 
 
 
@@ -208,9 +232,27 @@ TO DO:
 		<!-- ***************************************************** -->
 		<!-- ******************* FOOTER ************************** -->
 		<!-- ***************************************************** -->
+		<div>
+        
 		<hr>
-		<p style = "font-size: 12px; text-align: center"> &#169; Mollee Jain 2015 <br> NOTE: This webpage was created from scratch (including any and all CSS styling) by Mollee as a fun project in her free time. </p>
+		<br>
+		<div style="text-align:center;">
+		<a href="https://github.com/mjain2" target="_blank">
+			<img class="icons" src="./icons/github10.png" alt="Icons made by Elegant Themes from Flaticon (www.flaticon.com) and is licensed by CC BY 3.0" style="width:2.5%;"> </a>
+		<a href="https://www.linkedin.com/in/molleejain" target="_blank">
+			<img class="icons" src="./icons/linkedin1.png" alt="Icons made by Elegant Themes from Flaticon (www.flaticon.com) and is licensed by CC BY 3.0" style="width:2.5%;"> </a>
+		<a href="https://twitter.com/MolleeJain" target="_blank">
+			<img class="icons" src="./icons/twitter.png" alt="Icons made by Elegant Themes from Flaticon (www.flaticon.com) and is licensed by CC BY 3.0" style="width:2.5%;"> </a>
+		<a href="mailto:mjain2@wellesley.edu">
+			<img class="icons" src="./icons/email131.png" alt="Icons made by Elegant Themes from Flaticon (www.flaticon.com) and is licensed by CC BY 3.0" style="width:2.5%;"> </a>
+		</div>
+		<p style = "font-size: 12px; text-align: center"> &#169; Mollee Jain 2015 <br> NOTE: This webpage was created from scratch (including any and all CSS styling) by Mollee as a fun project in her free time </p>
+
+
+
+   
 		<hr>
+		  </div>
 	</body>
 
 	<script>
