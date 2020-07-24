@@ -1,0 +1,27 @@
+/* CSS Style Sheet for personal website
+* Author: Mollee Jain;
+* Date: July 2020; 
+Color palette: http://www.colourlovers.com/palette/2096818/Thalassa_Amaranth
+*/
+
+
+/* Home page style overrides */
+
+.homeBlurb {
+    display: inline-block;
+    width: 50%;
+    /* margin: 10px auto; */
+
+}
+
+.homeAuthor {
+    /* margin: 10px auto; */
+}
+
+.homeInfo {
+    /* margin: 10px auto; */
+}
+
+.homeFooter {
+    font-size: 1.1rem;
+}
