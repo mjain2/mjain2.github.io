@@ -14,19 +14,25 @@ pygmentscodefencesguesssyntax = true
 
 # disqusShortname = "yourdiscussshortname"
 
+[blackfriday]
+  hrefTargetBlank = true
+
 # Note: paths are relative to content
 [params]
     author = "Mollee Jain"
     info = "Software Engineer"
-    blurb = """Hello World! I'm Mollee and am currently a software engineer at Microsoft and 
+    blurb = """Hello World, I'm Mollee! I am currently a software engineer at Microsoft and 
     a STEM education advocate at Nuevo Foundation. Welcome to my site! """
     description = "Mollee Jain's personal website"
     keywords = "blog,developer,personal"
-    avatarurl = "images/nf_profile.png"
+    avatarurl = "images/profile_main.png"
     # gravatar = "mjain2@wellesley.edu"
+    
+    blogTitle = """ """
+    blogDesc = """I'm figuring things out as I go, and sometimes I write about it!"""
 
-    favicon_32 = "/img/favicon-32x32.png"
-    favicon_16 = "/img/favicon-16x16.png"
+    favicon_32 = "/images/icons/favicon-32x32.png"
+    favicon_16 = "/images/icons/favicon-16x16.png"
 
     dateformat = "January 2, 2006"
 
@@ -59,17 +65,17 @@ pygmentscodefencesguesssyntax = true
 
 # Menu links
 [[menu.main]]
-    name = "Blog"
-    weight = 1
-    url  = "/posts/"
-[[menu.main]]
     name = "About"
-    weight = 3
-    url = "/about/"
+    weight = 1
+    url  = "/about/"
 [[menu.main]]
     name = "Projects"
     weight = 2
     url = "/projects/"
+[[menu.main]]
+    name = "Blog"
+    weight = 3
+    url = "/posts/"
 [[menu.main]]
     name = "LinkedIn"
     pre = "fab fa-linkedin fa-lg"

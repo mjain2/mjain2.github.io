@@ -1,3 +1,6 @@
+<!-- import scripts for the entire site -->
+{{ partial "scripts.html" . }} 
+{{ partial "styles.html" . }} 
 <nav class="navigation">
   <section class="container">
     <a class="navigation-title" href="{{ .Site.BaseURL | relLangURL }}">

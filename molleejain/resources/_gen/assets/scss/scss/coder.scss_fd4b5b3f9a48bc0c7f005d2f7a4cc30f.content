@@ -407,6 +407,11 @@ img.emoji {
         text-align: center;
         width: 3.2rem; }
 
+/* Styling in blog template */
+.blogDesc {
+  font-style: italic;
+  font-weight: lighter; }
+
 .footer {
   width: 100%;
   text-align: center;
