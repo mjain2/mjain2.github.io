@@ -1,0 +1,79 @@
+/* CSS Style Sheet for personal website
+* Author: Mollee Jain;
+* Date: July 2020; 
+Color palette: http://www.colourlovers.com/palette/2096818/Thalassa_Amaranth
+Alternates:
+https://www.colourlovers.com/palette/101983/Lemonless
+https://www.colourlovers.com/palette/144642/Cherry_Cub
+https://www.colourlovers.com/palette/167272/Sunny_Duck
+*/
+
+
+/* Home page style overrides */
+body {
+    /* background-color: #ECE4CB; */
+    background-blend-mode: lighten;
+    /* color: #2A3434; */
+}
+
+.homeBlurb {
+    display: inline-block;
+    width: 50%;
+    /* margin: 10px auto; */
+
+}
+
+.homeAuthor {
+    /* margin: 10px auto; */
+}
+
+.homeInfo {
+    /* margin: 10px auto; */
+}
+
+.homeFooter {
+    font-size: 1.1rem;
+}
+
+.about-profile-pictures {
+    display:inline-block; 
+    width: 33%;    
+}
+
+#about-profile-pictures-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+
+/* styling in projects */
+.projects-expand-div {
+    /* background-color: black; */
+    /* font-size:  */
+}
+
+.projects-expand-header {
+    display: inline-block;
+    margin: 10px 0px;
+    
+} 
+
+.projects-expand-subtitle {
+    margin: 10px 0px;
+    float: right;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+/* defaults */
+a {
+	cursor: pointer;
+}
+
+a:link    {color:#edaf1d; background-color:transparent; text-decoration:none}
+a:visited {color:#edaf1d; background-color:transparent; text-decoration:none}
+a:hover   {color:#283747!important; background-color:#edaf1d; text-decoration:none; padding: 2px;} 
+a:active  {color:#283747 !important; background-color:#edaf1d; text-decoration:none}
+a:focus  {color:#283747 !important; background-color: transparent; text-decoration:none}

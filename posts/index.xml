@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mollee Jain</title>
+    <link>/posts/</link>
+    <description>Recent content on Mollee Jain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Nov 2020 08:47:11 +0100</lastBuildDate>
+    
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Welcome to the blog!</title>
+      <link>/posts/welcome/</link>
+      <pubDate>Wed, 18 Nov 2020 08:47:11 +0100</pubDate>
+      
+      <guid>/posts/welcome/</guid>
+      <description>Writing is not my forte. It is something I do for emails and work, yet I love reading the writings of other people. Like any other skill, it is something that can probably get better with practice, so here I am, writing the first blog post of my site, trying to figure out if this sounds too cheesy or has many run-on sentences (very likely, based on this sentence alone).</description>
+    </item>
+    
+  </channel>
+</rss>

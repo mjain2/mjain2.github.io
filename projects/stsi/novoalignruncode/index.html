@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Mollee Jain">
+    <meta name="description" content="#!/bin/bash#PBS -l walltime=12:00:00#PBS -N nameofrunfile#PBS -m abe#PBS -l nodes=1:ppn=1#PBS -o /pathway/to/the/output/filename.oe#PBS -j oe#PBS -M email@example.edu#PBS -V #MAKE SURE FILE HAS PERMISSIONS NEEDED# Tell it to go to this directorycd /pathway/to/the/directory/needed#load novocraftmodule load novocraft">
+    <meta name="keywords" content="blog,developer,personal">
+
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="#!/bin/bash#PBS -l walltime=12:00:00#PBS -N nameofrunfile#PBS -m abe#PBS -l nodes=1:ppn=1#PBS -o /pathway/to/the/output/filename.oe#PBS -j oe#PBS -M email@example.edu#PBS -V #MAKE SURE FILE HAS PERMISSIONS NEEDED# Tell it to go to this directorycd /pathway/to/the/directory/needed#load novocraftmodule load novocraft"/>
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="#!/bin/bash#PBS -l walltime=12:00:00#PBS -N nameofrunfile#PBS -m abe#PBS -l nodes=1:ppn=1#PBS -o /pathway/to/the/output/filename.oe#PBS -j oe#PBS -M email@example.edu#PBS -V #MAKE SURE FILE HAS PERMISSIONS NEEDED# Tell it to go to this directorycd /pathway/to/the/directory/needed#load novocraftmodule load novocraft" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/projects/stsi/novoalignruncode/" />
+
+
+
+    
+      <base href="/projects/stsi/novoalignruncode/">
+    
+    <title>
+   · Mollee Jain
+</title>
+
+    
+      <link rel="canonical" href="/projects/stsi/novoalignruncode/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.1f6cb9dee6a8c0f562b9765ed8ebb02285918d45d58aaaed6d0a1989e3b2d1ba.css" integrity="sha256-H2y53uaowPViuXZe2OuwIoWRjUXViqrtbQoZieOy0bo=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="/css/default-css.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.74.3" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
+    <main class="wrapper">
+      
+<script src="/js/clipboard.min.js"></script>
+
+
+<script src="/js/jquery-2.x.min.js"></script>
+
+ 
+<link rel="stylesheet" type="text/css" href="/css/default-css.css" />
+ 
+<nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Mollee Jain
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/about/">
+              
+                About
+              
+            </a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/projects/">
+              
+                Projects
+              
+            </a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/posts/">
+              
+                Blog
+              
+            </a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.linkedin.com/in/molleejain">
+              
+                <i class="fab fa-linkedin fa-lg"></i>
+              
+            </a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://github.com/mjain2/">
+              
+                <i class="fab fa-github fa-lg"></i>
+              
+            </a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://twitter.com/MolleeJain">
+              
+                <i class="fab fa-twitter fa-lg"></i>
+              
+            </a>
+          </li>
+        
+      
+
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1></h1>
+    </header>
+
+    <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;padding:.2em .6em;background-color:#fff"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">#!/bin/bash</span>
+<span style="color: #408080; font-style: italic">#PBS -l walltime=12:00:00</span>
+<span style="color: #408080; font-style: italic">#PBS -N nameofrunfile</span>
+<span style="color: #408080; font-style: italic">#PBS -m abe</span>
+<span style="color: #408080; font-style: italic">#PBS -l nodes=1:ppn=1</span>
+<span style="color: #408080; font-style: italic">#PBS -o /pathway/to/the/output/filename.oe</span>
+<span style="color: #408080; font-style: italic">#PBS -j oe</span>
+<span style="color: #408080; font-style: italic">#PBS -M email@example.edu</span>
+<span style="color: #408080; font-style: italic">#PBS -V </span>
+
+
+<span style="color: #408080; font-style: italic">#MAKE SURE FILE HAS PERMISSIONS NEEDED</span>
+<span style="color: #408080; font-style: italic"># Tell it to go to this directory</span>
+<span style="color: #008000">cd</span> /pathway/to/the/directory/needed
+<span style="color: #408080; font-style: italic">#load novocraft</span>
+module load novocraft
+</pre></div>
+
+  </article>
+</section>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+
+      </div>
+
+      
+  <footer class="footer homeFooter">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         Mollee Jain 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+
+    
+
+  </body>
+
+</html>
