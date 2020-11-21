@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Mollee Jain">
+    <meta name="description" content="##!/usr/bin/python# run_assoc_test: this file simply takes data from a gwas file and runs a# chi-squared test to determine if any SNPs are statistically significant.# To use:# (1) cd to/the/directory/where/the/.ped/file/is# (2) save this python file in that directory# (3a) run using this command(rename file names as appropriate):# python pythonfile.py pedfile.ped output.txt &gt; output2.txt# this will allow you to store the print statements in a file for later use# Note: the output can be whatever output format you choose# (3b)an alternative command is: # python pythonfile.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="##!/usr/bin/python# run_assoc_test: this file simply takes data from a gwas file and runs a# chi-squared test to determine if any SNPs are statistically significant.# To use:# (1) cd to/the/directory/where/the/.ped/file/is# (2) save this python file in that directory# (3a) run using this command(rename file names as appropriate):# python pythonfile.py pedfile.ped output.txt &gt; output2.txt# this will allow you to store the print statements in a file for later use# Note: the output can be whatever output format you choose# (3b)an alternative command is: # python pythonfile."/>
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="##!/usr/bin/python# run_assoc_test: this file simply takes data from a gwas file and runs a# chi-squared test to determine if any SNPs are statistically significant.# To use:# (1) cd to/the/directory/where/the/.ped/file/is# (2) save this python file in that directory# (3a) run using this command(rename file names as appropriate):# python pythonfile.py pedfile.ped output.txt &gt; output2.txt# this will allow you to store the print statements in a file for later use# Note: the output can be whatever output format you choose# (3b)an alternative command is: # python pythonfile." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/projects/stsi/pythoncode/" />
+
+
+
+    
+      <base href="/projects/stsi/pythoncode/">
+    
+    <title>
+   · Mollee Jain
+</title>
+
+    
+      <link rel="canonical" href="/projects/stsi/pythoncode/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.1f6cb9dee6a8c0f562b9765ed8ebb02285918d45d58aaaed6d0a1989e3b2d1ba.css" integrity="sha256-H2y53uaowPViuXZe2OuwIoWRjUXViqrtbQoZieOy0bo=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="/css/default-css.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.74.3" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
+    <main class="wrapper">
+      
+<script src="/js/clipboard.min.js"></script>
+
+
+<script src="/js/jquery-2.x.min.js"></script>
+
+ 
+<link rel="stylesheet" type="text/css" href="/css/default-css.css" />
+ 
+<nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Mollee Jain
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/about/">
+              
+                About
+              
+            </a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/projects/">
+              
+                Projects
+              
+            </a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/posts/">
+              
+                Blog
+              
+            </a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.linkedin.com/in/molleejain">
+              
+                <i class="fab fa-linkedin fa-lg"></i>
+              
+            </a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://github.com/mjain2/">
+              
+                <i class="fab fa-github fa-lg"></i>
+              
+            </a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://twitter.com/MolleeJain">
+              
+                <i class="fab fa-twitter fa-lg"></i>
+              
+            </a>
+          </li>
+        
+      
+
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1></h1>
+    </header>
+
+    <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;padding:.2em .6em;background-color:#fff"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">##!/usr/bin/python</span>
+<span style="color: #408080; font-style: italic"># run_assoc_test: this file simply takes data from a gwas file and runs a</span>
+<span style="color: #408080; font-style: italic"># chi-squared test to determine if any SNPs are statistically significant.</span>
+<span style="color: #408080; font-style: italic"># To use:</span>
+<span style="color: #408080; font-style: italic">#   (1) cd to/the/directory/where/the/.ped/file/is</span>
+<span style="color: #408080; font-style: italic">#   (2) save this python file in that directory</span>
+<span style="color: #408080; font-style: italic">#   (3a) run using this command(rename file names as appropriate):</span>
+<span style="color: #408080; font-style: italic">#       python pythonfile.py pedfile.ped output.txt &gt; output2.txt</span>
+<span style="color: #408080; font-style: italic">#       this will allow you to store the print statements in a file for later use</span>
+<span style="color: #408080; font-style: italic">#       Note: the output can be whatever output format you choose</span>
+<span style="color: #408080; font-style: italic">#   (3b)an alternative command is:    </span>
+<span style="color: #408080; font-style: italic">#       python pythonfile.py pedfile.ped outputfile.txt </span>
+<span style="color: #408080; font-style: italic">#       this will display all print commands on the command line</span>
+<span style="color: #408080; font-style: italic">#       Note: the output can be whatever output format you choose</span>
+<span style="color: #408080; font-style: italic"># Mollee Jain, (TSRI-STSI Intern, Aug 2013)</span>
+
+<span style="color: #408080; font-style: italic">###PLEASE READ#####    </span>
+<span style="color: #408080; font-style: italic">#############################NOTES:###########################################</span>
+<span style="color: #408080; font-style: italic">#SCIPY: this file imports stats from the scipy module.  This allows us to calculate the p-value from a chi-squared test.  This needs to be downloaded before use of this file. For Linux Mint 15 Olivia I simply opened the Synaptic Package Manager and installed scipy. </span>
+
+<span style="color: #408080; font-style: italic">#TYPE OF CHI-SQUARED TEST: This program runs a chi-squared test as a 2X2 contingency table.  The calculated p-value is standard - the Fisher Exact Test and the Yates Correction are not utilized in the p-value calculation.</span>
+
+<span style="color: #408080; font-style: italic">#DEGRESS OF FREEDOM:the degrees of freedom (df) for this test is 1.  If df for your sample is not 1, you will need to edit this code under the &#39;pvalue&#39; function. </span>
+
+<span style="color: #408080; font-style: italic">#WHERE TO START: the numbers 6 and 7 indicate where the first pair of nucleotides are.  Change these numbers in the &#39;run&#39; function if the location of the first pair of nucleotides are not at &#39;6&#39;&amp;&#39;7&#39;.  To find the location of the first pair of nucleotides - print the line variable on line 122 and count (starting from 0) to see where the first nucleotide is</span>
+<span style="color: #408080; font-style: italic">##############################################################################</span>
+
+
+<span style="color: #408080; font-style: italic">#imports</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sys</span> <span style="color: #008000; font-weight: bold">import</span> argv 
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">collections</span> <span style="color: #008000; font-weight: bold">import</span> Counter 
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy</span> <span style="color: #008000; font-weight: bold">import</span> stats             <span style="color: #408080; font-style: italic">#allows us to calculate the p-value</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
+
+
+<span style="color: #408080; font-style: italic">#arguments to be provided</span>
+script, filename, output <span style="color: #666666">=</span> argv
+    <span style="color: #408080; font-style: italic">#script - this file</span>
+    <span style="color: #408080; font-style: italic">#filename - GWAS file (typically in .ped format; i.e. genotypes.ped)</span>
+    <span style="color: #408080; font-style: italic">#output - file to write results to (in whatever format you choose; i.e. sampleoutput.txt)</span>
+
+<span style="color: #408080; font-style: italic">########################DEFINITIONS/LISTS:###################################</span>
+to_file <span style="color: #666666">=</span> <span style="color: #008000">open</span>(output, <span style="color: #BA2121">&#39;w&#39;</span>) <span style="color: #408080; font-style: italic">#output file</span>
+first <span style="color: #666666">=</span> []                  <span style="color: #408080; font-style: italic">#a list of the first nucleotide of the SNP pair(ex.&#39;C&#39; in CG)</span>
+second <span style="color: #666666">=</span> []                 <span style="color: #408080; font-style: italic">#a list of the second nucleo. of the SNP pair(ex. &#39;G&#39; in CG)</span>
+chi <span style="color: #666666">=</span> []                    <span style="color: #408080; font-style: italic">#a list that will help compute the chi-squared value</span>
+count1 <span style="color: #666666">=</span> []                 <span style="color: #408080; font-style: italic">#a list for the count of nucleotides (1st in the pair)</span>
+count2 <span style="color: #666666">=</span> []                 <span style="color: #408080; font-style: italic">#a list for the count of nucleotides (2nd in the pair)</span>
+
+<span style="color: #408080; font-style: italic">########################FUNCTIONS:##########################################</span>
+
+<span style="color: #408080; font-style: italic">### A function to split GWAS file to separate pairs of SNPS (ex.AG) ###</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">split_snp</span>(x,y):
+    <span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(filename) <span style="color: #008000; font-weight: bold">as</span> f:
+        <span style="color: #008000; font-weight: bold">for</span> snpfile <span style="color: #AA22FF; font-weight: bold">in</span> f:
+            line <span style="color: #666666">=</span> snpfile<span style="color: #666666">.</span>split(<span style="color: #BA2121">&quot; &quot;</span>)   <span style="color: #408080; font-style: italic">#split each line in .ped file by spaces</span>
+            firstpart <span style="color: #666666">=</span> line[x]         <span style="color: #408080; font-style: italic">#first nucleo. of the SNP pair</span>
+            secondpart <span style="color: #666666">=</span> line[y]        <span style="color: #408080; font-style: italic">#second nucleo. of the SNP pair</span>
+            first<span style="color: #666666">.</span>append(firstpart)     <span style="color: #408080; font-style: italic">#append first nucleo. to list &#39;first&#39;</span>
+            second<span style="color: #666666">.</span>append(secondpart)   <span style="color: #408080; font-style: italic">#append second nucelo. to list &#39;second&#39;      </span>
+        
+                     
+    f<span style="color: #666666">.</span>close()                       
+                  
+
+<span style="color: #408080; font-style: italic">### A function to calculate the chisquared value of a pair of SNPs ###</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">chisq</span>():
+    <span style="color: #408080; font-style: italic">#a count of whatever is in the column (i.e. count of how many C </span>
+    <span style="color: #408080; font-style: italic">#and G&#39;s are in the first column of the SNPs)</span>
+    firstcounter <span style="color: #666666">=</span> Counter(first)
+    secondcounter <span style="color: #666666">=</span> Counter(second)
+    count1<span style="color: #666666">.</span>append(firstcounter)             
+    count2<span style="color: #666666">.</span>append(secondcounter)       
+    
+    <span style="color: #008000; font-weight: bold">if</span> <span style="color: #008000">len</span>(first) <span style="color: #666666">==</span> <span style="color: #008000">len</span>(second):    <span style="color: #408080; font-style: italic">#a count of items in a row --</span>
+        total_row <span style="color: #666666">=</span> <span style="color: #008000">len</span>(first)       <span style="color: #408080; font-style: italic">#the counts should be the same!</span>
+    <span style="color: #008000; font-weight: bold">else</span>: 
+        <span style="color: #008000; font-weight: bold">print</span> <span style="color: #BA2121">&quot;Error: the length of each column is not the same.&quot;</span>
+    <span style="color: #008000; font-weight: bold">del</span> first[:]                 <span style="color: #408080; font-style: italic">#empties lists to allow for lists to be reused</span>
+    <span style="color: #008000; font-weight: bold">del</span> second[:]                
+    
+    <span style="color: #408080; font-style: italic">#setup for a chisquared with expected and observed values      </span>
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> firstcounter <span style="color: #AA22FF; font-weight: bold">or</span> secondcounter:
+        total_column <span style="color: #666666">=</span> firstcounter[i] <span style="color: #666666">+</span> secondcounter[i]       <span style="color: #408080; font-style: italic">#gives total of counts</span>
+        expected <span style="color: #666666">=</span> <span style="color: #008000">float</span>(total_column<span style="color: #666666">*</span>total_row)<span style="color: #666666">/</span>(total_row<span style="color: #666666">*2</span>)  <span style="color: #408080; font-style: italic">#expected counts formula</span>
+        
+        <span style="color: #408080; font-style: italic">#(to see observed and expected values, print the line below:)</span>
+        <span style="color: #408080; font-style: italic">#print i,firstcounter[i],secondcounter[i],&quot;||&quot;,expected</span>
+        
+        chisq <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6688; font-weight: bold">%0.5f</span><span style="color: #BA2121">&quot;</span><span style="color: #666666">%</span>(((firstcounter[i]<span style="color: #666666">-</span>expected)<span style="color: #666666">**2/</span>expected) <span style="color: #666666">+</span> ((secondcounter[i]<span style="color: #666666">-</span>expected)<span style="color: #666666">**2/</span>expected))            <span style="color: #408080; font-style: italic">#calculation of the chi-squared value</span>
+        chi<span style="color: #666666">.</span>append(<span style="color: #008000">float</span>(chisq))   <span style="color: #408080; font-style: italic">#appends chi-squared value to a list &#39;chi&#39;</span>
+        
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000">sum</span>(chi)                <span style="color: #408080; font-style: italic">#returns the value of the chi-squared test</span>
+
+<span style="color: #408080; font-style: italic">### A function to calculate the p-value of the chi-square value of a SNP pair ###</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">pvalue</span>():
+    chisq_value <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">sum</span>(chi))                       
+    <span style="color: #008000; font-weight: bold">print</span> <span style="color: #BA2121">&quot;CHI-SQUARED VALUE: &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000">str</span>(chisq_value)      
+    df <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #666666">1</span>)                                       <span style="color: #408080; font-style: italic">#degrees of freedom - see NOTES</span>
+    p_value <span style="color: #666666">=</span> <span style="color: #666666">1</span> <span style="color: #666666">-</span> stats<span style="color: #666666">.</span>chi2<span style="color: #666666">.</span>cdf(<span style="color: #008000">float</span>(chisq_value),df) <span style="color: #408080; font-style: italic">#using scipy to calculate pvalue</span>
+    <span style="color: #008000; font-weight: bold">print</span> <span style="color: #BA2121">&quot;P-VALUE: &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000">str</span>(p_value)            
+    <span style="color: #008000; font-weight: bold">print</span> count1,count2   
+    
+    significance <span style="color: #666666">=</span> <span style="color: #666666">1.0e-8</span>       <span style="color: #408080; font-style: italic">#alter this variable to output more/less significant</span>
+                                <span style="color: #408080; font-style: italic">#p-values to the output file</span>
+    <span style="color: #008000; font-weight: bold">if</span> p_value <span style="color: #666666">&lt;</span> significance:
+        to_file<span style="color: #666666">.</span>write(<span style="color: #008000">str</span>(count1))
+        to_file<span style="color: #666666">.</span>write(<span style="color: #008000">str</span>(count2))
+        to_file<span style="color: #666666">.</span>write(<span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\t</span><span style="color: #BA2121">&quot;</span>)
+        to_file<span style="color: #666666">.</span>write(<span style="color: #008000">str</span>(p_value))
+        to_file<span style="color: #666666">.</span>write(<span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\t</span><span style="color: #BA2121">&quot;</span>)
+        to_file<span style="color: #666666">.</span>write(<span style="color: #008000">str</span>(chisq()))
+        to_file<span style="color: #666666">.</span>write(<span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>)
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000">None</span>
+ 
+
+<span style="color: #408080; font-style: italic">####A function to run the whole program######</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">run</span>(x,y):
+    <span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(filename) <span style="color: #008000; font-weight: bold">as</span> f:
+        <span style="color: #008000; font-weight: bold">for</span> snpfile <span style="color: #AA22FF; font-weight: bold">in</span> f:
+            line <span style="color: #666666">=</span> snpfile<span style="color: #666666">.</span>split(<span style="color: #BA2121">&quot; &quot;</span>)       <span style="color: #408080; font-style: italic">#split each line in .ped file by spaces</span>
+            <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span> (<span style="color: #666666">6</span>,<span style="color: #008000">len</span>(line)<span style="color: #666666">-2</span>): <span style="color: #408080; font-style: italic">#loops over each SNP pair in the data set</span>
+                <span style="color: #008000; font-weight: bold">print</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>
+                <span style="color: #408080; font-style: italic">#loops through the length of the gwas file to do a chi-squared test</span>
+                <span style="color: #408080; font-style: italic">#stops when there are no further nucleotides</span>
+                <span style="color: #008000; font-weight: bold">if</span> x <span style="color: #666666">!=</span> <span style="color: #666666">6</span> <span style="color: #AA22FF; font-weight: bold">and</span> y <span style="color: #666666">!=</span> <span style="color: #666666">7</span>:       
+                    <span style="color: #008000; font-weight: bold">try</span>:           
+                        split_snp(x,y)
+                        <span style="color: #008000; font-weight: bold">print</span> <span style="color: #BA2121">&quot;PAIR ID: &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000">str</span>(x) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; and &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000">str</span>(y)
+                        x <span style="color: #666666">+=</span> <span style="color: #666666">2</span>
+                        y <span style="color: #666666">+=</span> <span style="color: #666666">2</span>    
+                        chisq()
+                        pvalue()
+                        <span style="color: #008000; font-weight: bold">del</span> count1[:]       <span style="color: #408080; font-style: italic">#empties lists to allow for lists to be reused</span>
+                        <span style="color: #008000; font-weight: bold">del</span> count2[:]
+                        <span style="color: #008000; font-weight: bold">del</span> chi[:]
+                    <span style="color: #408080; font-style: italic">#signals the for loop to stop    </span>
+                    <span style="color: #008000; font-weight: bold">except</span>:
+                        <span style="color: #008000; font-weight: bold">break</span>
+                
+                <span style="color: #408080; font-style: italic">#this starts off the loop at the first pair of nucleotides</span>
+                <span style="color: #008000; font-weight: bold">else</span>:                      
+                    <span style="color: #008000; font-weight: bold">print</span> <span style="color: #BA2121">&quot;PAIR ID: &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000">str</span>(x) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; and &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000">str</span>(y)
+                    split_snp(x,y)
+                    x <span style="color: #666666">+=</span> <span style="color: #666666">2</span>
+                    y <span style="color: #666666">+=</span> <span style="color: #666666">2</span>    
+                    chisq()
+                    pvalue()
+                    <span style="color: #008000; font-weight: bold">del</span> count1[:]        <span style="color: #408080; font-style: italic">#empties lists to allow for lists to be reused</span>
+                    <span style="color: #008000; font-weight: bold">del</span> count2[:]
+                    <span style="color: #008000; font-weight: bold">del</span> chi[:]
+    f<span style="color: #666666">.</span>close()
+
+
+to_file<span style="color: #666666">.</span>write(<span style="color: #BA2121">&quot; Count of nucleotides in SNP Pair    ||| &quot;</span>)
+to_file<span style="color: #666666">.</span>write(<span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\t</span><span style="color: #BA2121">&quot;</span>)
+to_file<span style="color: #666666">.</span>write(<span style="color: #BA2121">&quot;P-Value      ||| &quot;</span>)
+to_file<span style="color: #666666">.</span>write(<span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\t</span><span style="color: #BA2121">&quot;</span>)
+to_file<span style="color: #666666">.</span>write(<span style="color: #BA2121">&quot;Chi-Squared Value&quot;</span>)
+to_file<span style="color: #666666">.</span>write(<span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">&quot;</span>)
+
+run(<span style="color: #666666">6</span>,<span style="color: #666666">7</span>)        <span style="color: #408080; font-style: italic">#runs the whole program.  </span>
+</pre></div>
+
+  </article>
+</section>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+
+      </div>
+
+      
+  <footer class="footer homeFooter">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         Mollee Jain 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+
+    
+
+  </body>
+
+</html>

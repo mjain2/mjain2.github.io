@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Mollee Jain</title>
+    <link>/projects/</link>
+    <description>Recent content in Projects on Mollee Jain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Jul 2020 08:47:11 +0100</lastBuildDate>
+    
+	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/projects/stsi/conkycode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/stsi/conkycode/</guid>
+      <description># Use Xft?use_xft yesxftfont DejaVu Sans:size=8xftalpha 0.8text_buffer_size 2048# Update interval in secondsupdate_interval 1# This is the number of times Conky will update before quitting.# Set to zero to run forever.total_run_times 0# Create own window instead of using desktop (required in nautilus)own_window yesown_window_color e9967aown_window_transparent yes#own_window_type overrideown_window_hints undecorated,below,sticky,skip_taskbar,skip_pager# Use double buffering (reduces flicker, may not work for everyone)double_buffer yes# Minimum size of text areaminimum_size 182 0maximum_width 182# Draw shades?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/projects/stsi/novoalignruncode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/stsi/novoalignruncode/</guid>
+      <description>#!/bin/bash#PBS -l walltime=12:00:00#PBS -N nameofrunfile#PBS -m abe#PBS -l nodes=1:ppn=1#PBS -o /pathway/to/the/output/filename.oe#PBS -j oe#PBS -M email@example.edu#PBS -V #MAKE SURE FILE HAS PERMISSIONS NEEDED# Tell it to go to this directorycd /pathway/to/the/directory/needed#load novocraftmodule load novocraft</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/projects/stsi/pythoncode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/stsi/pythoncode/</guid>
+      <description>##!/usr/bin/python# run_assoc_test: this file simply takes data from a gwas file and runs a# chi-squared test to determine if any SNPs are statistically significant.# To use:# (1) cd to/the/directory/where/the/.ped/file/is# (2) save this python file in that directory# (3a) run using this command(rename file names as appropriate):# python pythonfile.py pedfile.ped output.txt &amp;gt; output2.txt# this will allow you to store the print statements in a file for later use# Note: the output can be whatever output format you choose# (3b)an alternative command is: # python pythonfile.</description>
+    </item>
+    
+  </channel>
+</rss>
